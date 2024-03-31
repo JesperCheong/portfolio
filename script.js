@@ -20,3 +20,13 @@ function closeMenu() {
 const tabLinks = document.getElementsByClassName("tab-links");
 const tabContents = document.getElementsByClassName("tab-contents");
 const sideMenu = document.getElementById("side-menu");
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwv3fxLj2CpMN9r67GQQusHeQavNGoFK_qRFMXcBaAQ0U3LCS5W8BN5FzC2Iiux2xhq/exec'
+const form = document.forms['submit-to-google-sheet']
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => console.log('Success!', response))
+    .catch(error => console.error('Error!', error.message))
+})
