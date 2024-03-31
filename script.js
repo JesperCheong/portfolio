@@ -1,6 +1,3 @@
-const tabLinks = document.getElementsByClassName("tab-links");
-const tabContents = document.getElementsByClassName("tab-contents");
-
 function openTab(tabName) {
   for (const tabLink of tabLinks) {
     tabLink.classList.remove("active-link");
@@ -11,3 +8,15 @@ function openTab(tabName) {
   event.currentTarget.classList.add("active-link");
   document.getElementById(tabName).classList.add("active-tab");
 }
+
+function openMenu() {
+  sideMenu.style.right = "0";
+}
+
+function closeMenu() {
+  sideMenu.style.right = "-200px";
+}
+
+const tabLinks = document.getElementsByClassName("tab-links");
+const tabContents = document.getElementsByClassName("tab-contents");
+const sideMenu = document.getElementById("side-menu");
