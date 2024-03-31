@@ -4,7 +4,9 @@
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   background: #080808;
   color: white;
@@ -78,7 +80,7 @@ nav ul li a:hover::after {
 
 /* --------------- ABOUT --------------- */
 #about {
-  padding: 80px 0;
+  padding: 40px 0;
   color: #ababab;
 }
 
@@ -360,6 +362,8 @@ nav .bi {
   nav .bi {
     display: block;
     font-size: 25px;
+    position: fixed;
+    right: 30px;
   }
   nav ul {
     background: #ff004f;
