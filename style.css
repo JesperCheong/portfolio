@@ -342,6 +342,14 @@ form .btn2 {
 .copyright i {
   color: #ff004f;
 }
+/* --------------- MESSAGE FEEDBACK --------------- */
+#msg {
+  color: #61b752;
+  margin-top: -40px;
+  display: block;
+}
+
+
 /* --------------- MEDIA QUERY --------------- */
 nav .bi {
   display: none;

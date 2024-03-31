@@ -23,10 +23,17 @@ const sideMenu = document.getElementById("side-menu");
 
 const scriptURL = 'https://script.google.com/macros/s/AKfycbwv3fxLj2CpMN9r67GQQusHeQavNGoFK_qRFMXcBaAQ0U3LCS5W8BN5FzC2Iiux2xhq/exec'
 const form = document.forms['submit-to-google-sheet']
+const msg = document.getElementById("msg");
 
 form.addEventListener('submit', e => {
   e.preventDefault()
   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => console.log('Success!', response))
+    .then(response => {
+      msg.innerText = "Message sent successfully";
+      setTimeout(function() {
+        msg.innerText = "";
+      }, 5000);
+      form.reset();
+    })
     .catch(error => console.error('Error!', error.message))
 })
